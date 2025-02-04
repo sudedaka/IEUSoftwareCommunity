@@ -114,7 +114,7 @@ const Navbar = () => {
               </motion.li>
             ))}
             <motion.button
-              className="primary-btn px-8 py-3 bg-blue-600 text-white rounded-lg mt-4"
+              className="primary-btn text-5xl md:text-3xl px-8 py-3 bg-blue-600 text-white rounded-lg mt-4"
               onClick={handleSignInClick}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
