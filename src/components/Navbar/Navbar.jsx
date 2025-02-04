@@ -106,15 +106,18 @@ const Navbar = () => {
                 </a>
               </motion.li>
             ))}
-            <motion.button
-              className="primary-btn px-6 py-3 bg-blue-600 text-white rounded-lg mt-4"
-              onClick={handleSignInClick}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              Sign In
-            </motion.button>
+              <motion.button
+        className="primary-btn text-5xl sm:text-3xl md:text-4xl px-8 py-3 bg-blue-600 text-white rounded-lg mt-4"
+        onClick={handleSignInClick}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        Sign In
+      </motion.button>
+
+
+
           </ul>
         </motion.div>
       )}
