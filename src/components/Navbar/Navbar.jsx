@@ -12,7 +12,6 @@ const NavbarMenu = [
     id: 2,
     title: "Our Team",
     link: "#our-team",
-
   },
   {
     id: 3,
@@ -51,19 +50,21 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden lg:block">
-          <ul className="flex items-center gap-3">
+          <ul className="flex items-center gap-6">
             {NavbarMenu.map((menu) => (
               <li key={menu.id}>
                 <a
                   href={menu.link || menu.path}
-                  className="inline-block py-2 px-3 hover:text-secondary relative group"
+                  className="inline-block py-2 px-4 text-lg font-semibold hover:bg-secondary text-black rounded-lg transition duration-300"
                 >
-                  <div className="w-2 h-2 bg-secondary absolute mt-4 rounded-full left-1/2 -translate-x-1/2 top-1/2 bottom-0 group-hover:block hidden"></div>
                   {menu.title}
                 </a>
               </li>
             ))}
-            <button className="primary-btn" onClick={handleSignInClick}>
+            <button
+              className="primary-btn px-4 py-2 bg-blue-600 text-white rounded-lg"
+              onClick={handleSignInClick}
+            >
               Sign In
             </button>
           </ul>
@@ -80,24 +81,41 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-80 z-40 flex flex-col items-center justify-center">
-          <ul className="space-y-6 text-2xl">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="lg:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-40 flex flex-col items-center justify-center"
+        >
+          <ul className="space-y-8 text-2xl">
             {NavbarMenu.map((menu) => (
-              <li key={menu.id}>
+              <motion.li
+                key={menu.id}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: menu.id * 0.1 }}
+                className="w-full px-6 py-3 bg-white rounded-lg text-center shadow-md hover:bg-secondary cursor-pointer"
+              >
                 <a
                   href={menu.link || menu.path}
                   onClick={toggleMobileMenu}
-                  className="text-black hover:text-secondary"
+                  className="text-black font-semibold"
                 >
                   {menu.title}
                 </a>
-              </li>
+              </motion.li>
             ))}
-            <button className="primary-btn" onClick={handleSignInClick}>
+            <motion.button
+              className="primary-btn px-6 py-3 bg-blue-600 text-white rounded-lg mt-4"
+              onClick={handleSignInClick}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
               Sign In
-            </button>
+            </motion.button>
           </ul>
-        </div>
+        </motion.div>
       )}
     </nav>
   );
