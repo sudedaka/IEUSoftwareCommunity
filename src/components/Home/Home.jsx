@@ -1,13 +1,12 @@
 import React from 'react';
-import Hero from '../Hero/Hero';
 import Services from '../Services/Services';
 import Banner from '../Banner/Banner';
 import AboutUs from '../AboutUs/AboutUs';
-
+import ImageSlider from '../ImageSlider/ImageSlider';
 const Home = () => {
   return (
     <div id = "home">
-      <Hero />
+      <ImageSlider autoPlay={true} interval={4000} />
       <Services />
       <AboutUs/>
       <Banner />

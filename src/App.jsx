@@ -10,7 +10,6 @@ import ContactUs from "./components/ContactUs/ContactUs.jsx";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-
 const App = () => {
   const footerRef = useRef(null);
 
@@ -22,7 +21,14 @@ const App = () => {
     <Router>
       <Navbar onContactClick={scrollToFooter} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route 
+          path="/" 
+          element={
+            <>
+              <Home />
+            </>
+          } 
+        />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/our-team" element={<OurTeam />} />
