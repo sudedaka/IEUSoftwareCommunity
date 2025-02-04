@@ -61,12 +61,13 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
-            <button
-              className="primary-btn px-4 py-2 bg-blue-600 text-white rounded-lg"
-              onClick={handleSignInClick}
-            >
-              Sign In
-            </button>
+         <button
+        className="primary-btn px-6 py-3 bg-blue-600 text-white rounded-lg text-lg font-semibold"
+        onClick={handleSignInClick}
+      >
+        Sign In
+      </button>
+
           </ul>
         </div>
 
