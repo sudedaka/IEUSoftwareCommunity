@@ -10,8 +10,9 @@ const NavbarMenu = [
   },
   {
     id: 2,
-    title: "Calendar",
-    link: "#",
+    title: "Our Team",
+    link: "#our-team",
+
   },
   {
     id: 3,
@@ -20,48 +21,41 @@ const NavbarMenu = [
   },
   {
     id: 4,
-    title: "Our Team",
-    link: "#",
-  },
-  {
-    id: 5,
     title: "Contact Us",
-    link: "#contact-us", // Ensure this links to the correct section
+    link: "#contact-us",
   },
 ];
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Toggle mobile menu visibility
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const handleSignInClick = () => {
-    // Open the link in a new tab
     window.open("https://club.ieu.edu.tr/ogrenci-kulupleri", "_blank");
   };
 
   return (
-    <nav className="relative z-20">
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        className="container py-10 flex justify-between items-center"
+        className="container py-4 flex justify-between items-center"
       >
-        {/* Logo section */}
+        {/* Logo */}
         <div>
           <h1 className="font-bold text-2xl">IEU Software Community</h1>
         </div>
 
-        {/* Menu section for desktop */}
+        {/* Desktop Menu */}
         <div className="hidden lg:block">
           <ul className="flex items-center gap-3">
             {NavbarMenu.map((menu) => (
               <li key={menu.id}>
                 <a
-                  href={menu.link || menu.path} // Ensure this uses correct 'link' for menu items
+                  href={menu.link || menu.path}
                   className="inline-block py-2 px-3 hover:text-secondary relative group"
                 >
                   <div className="w-2 h-2 bg-secondary absolute mt-4 rounded-full left-1/2 -translate-x-1/2 top-1/2 bottom-0 group-hover:block hidden"></div>
@@ -69,16 +63,13 @@ const Navbar = () => {
                 </a>
               </li>
             ))}
-            <button 
-              className="primary-btn"
-              onClick={handleSignInClick}
-            >
+            <button className="primary-btn" onClick={handleSignInClick}>
               Sign In
             </button>
           </ul>
         </div>
 
-        {/* Mobile Hamburger menu section */}
+        {/* Mobile Menu Button */}
         <div className="lg:hidden">
           <IoMdMenu
             onClick={toggleMobileMenu}
@@ -87,25 +78,22 @@ const Navbar = () => {
         </div>
       </motion.div>
 
-      {/* Mobile menu (visible when isMobileMenuOpen is true) */}
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-80 z-10 flex flex-col items-center justify-center">
+        <div className="lg:hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-80 z-40 flex flex-col items-center justify-center">
           <ul className="space-y-6 text-2xl">
             {NavbarMenu.map((menu) => (
               <li key={menu.id}>
                 <a
-                  href={menu.link || menu.path} // Same as desktop, correct link logic
-                  onClick={toggleMobileMenu} // Close menu after click
+                  href={menu.link || menu.path}
+                  onClick={toggleMobileMenu}
                   className="text-black hover:text-secondary"
                 >
                   {menu.title}
                 </a>
               </li>
             ))}
-            <button 
-              className="primary-btn"
-              onClick={handleSignInClick} // Use the same handler for both mobile and desktop
-            >
+            <button className="primary-btn" onClick={handleSignInClick}>
               Sign In
             </button>
           </ul>

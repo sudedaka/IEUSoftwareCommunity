@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import Slider1 from '../../assets/slider1.png';
 import Slider2 from '../../assets/slider2.png';
 import Slider3 from '../../assets/slider3.jpg';
+import Slider4 from '../../assets/slider4.png';
+import Slider5 from '../../assets/slider5.png';
 
 // Animasyon fonksiyonu
 const FadeUp = (delay) => {
@@ -75,6 +77,28 @@ const ImageSlider = () => {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }}
             src={Slider3}
             alt="Slide 3"
+            className="w-[350px] xl:w-[500px] h-auto mx-auto relative z-10 drop-shadow-md"
+          />
+        </div>
+        {/* Slider Item 4 */}
+        <div className="slick-slide mx-2">
+          <motion.img
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }}
+            src={Slider4}
+            alt="Slide 4"
+            className="w-[350px] xl:w-[500px] h-auto mx-auto relative z-10 drop-shadow-md"
+          />
+        </div>
+        {/* Slider Item 5 */}
+        <div className="slick-slide mx-2">
+          <motion.img
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }}
+            src={Slider5}
+            alt="Slide 5"
             className="w-[350px] xl:w-[500px] h-auto mx-auto relative z-10 drop-shadow-md"
           />
         </div>

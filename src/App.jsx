@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Home from "./components/Home/Home.jsx";
-import Calendar from "./components/Calendar/Calendar.jsx";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import OurTeam from "./components/OurTeam/OurTeam.jsx";
 import ContactUs from "./components/ContactUs/ContactUs.jsx";
@@ -29,7 +28,6 @@ const App = () => {
             </>
           } 
         />
-        <Route path="/calendar" element={<Calendar />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/our-team" element={<OurTeam />} />
         <Route path="/contact-us" element={<ContactUs />} />

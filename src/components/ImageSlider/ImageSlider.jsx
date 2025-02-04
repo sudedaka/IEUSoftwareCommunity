@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import slider1 from "../../assets/slider1.png";
+import slider1 from "../../assets/slider1.jpg";
 import slider2 from "../../assets/slider2.png";
-import slider3 from "../../assets/slider3.jpg";
-import Blob from "../../assets/blob.svg"; // Blob'u import ettik.
+import slider3 from "../../assets/slider3.png";
+import slider4 from "../../assets/slider4.png";
+import slider5 from "../../assets/slider5.png";
+import Blob from "../../assets/blob.svg"; 
 
-const images = [slider1, slider2, slider3];
+const images = [slider1, slider2, slider3,slider4,slider5];
 
 const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,9 +30,8 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
   }, [currentIndex, autoPlay, interval]);
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto mt-6 bg-gray-100"> {/* Set the gray background */}
-      {/* Blob Arka Plan (Daha Büyük ve Belirgin Yapıldı) */}
-      <motion.img
+        <div className="relative w-full max-w-4xl mx-auto mt-24 bg-gray-100">
+        <motion.img
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
