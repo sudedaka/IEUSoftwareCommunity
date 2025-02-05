@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import slider1 from "../../assets/slider1.jpg";
-import slider2 from "../../assets/slider2.png";
-import slider3 from "../../assets/slider3.png";
-import slider4 from "../../assets/slider4.png";
-import slider5 from "../../assets/slider5.png";
-import Blob from "../../assets/blob.svg"; 
+import slider1 from "../../assets/activities/slider1.jpg";
+import slider2 from "../../assets/activities/slider2.png";
+import slider3 from "../../assets/activities/slider3.png";
+import slider4 from "../../assets/activities/slider4.jpg";
+import slider5 from "../../assets/activities/slider5.jpg";
+import slider6 from "../../assets/activities/slider6.png";
 
-const images = [slider1, slider2, slider3, slider4, slider5];
+import Blob from "../../assets/blob.svg";
+
+const images = [slider1, slider2, slider3, slider4, slider5,slider6];
 
 const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -51,7 +53,7 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
-          className="relative w-full h-[400px] overflow-hidden rounded-lg z-10"
+          className="relative w-full h-[400px] sm:h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg z-10"
         >
           <img
             src={images[currentIndex]}
