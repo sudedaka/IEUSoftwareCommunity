@@ -58,7 +58,7 @@ const Footer = () => {
 
             <h1 className="text-2xl font-bold">Get In Touch</h1>
             <div className="flex space-x-6 py-3">
-              <a href="https://chat.whatsapp.com/FQSKgJ5f1eIAhlyF5sVym0">
+              <a href="">
                 <FaWhatsapp className="cursor-pointer hover:text-primary hover:scale-105 duration-200" />
               </a>
               <a href="https://www.instagram.com/ieusoftware?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
+import { IoMdClose } from "react-icons/io"; // Çarpı ikonu için import
 import { motion } from "framer-motion";
 
 const NavbarMenu = [
@@ -95,6 +96,12 @@ const Navbar = () => {
           className="lg:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-40 flex flex-col items-center justify-center mobile-menu"
           onClick={handleOutsideClick} // Menüyü kapatmak için tıklama kontrolü
         >
+          <div className="absolute top-4 right-4">
+            <IoMdClose
+              onClick={toggleMobileMenu}
+              className="text-4xl text-white cursor-pointer"
+            />
+          </div>
           <ul className="space-y-8 text-2xl">
             {NavbarMenu.map((menu) => (
               <motion.li
@@ -113,16 +120,15 @@ const Navbar = () => {
                 </a>
               </motion.li>
             ))}
-                <motion.button
-        className="primary-btn text-5xl md:text-3xl px-8 py-3 bg-blue-600 text-white rounded-lg mt-4"
-        onClick={handleSignInClick}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        Sign In
-      </motion.button>
-
+            <motion.button
+              className="primary-btn text-5xl md:text-3xl px-8 py-3 bg-blue-600 text-white rounded-lg mt-4"
+              onClick={handleSignInClick}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              Sign In
+            </motion.button>
           </ul>
         </motion.div>
       )}
