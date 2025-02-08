@@ -108,7 +108,7 @@ const OurTeam = () => {
         }
 
         .swiper-pagination-bullet-active {
-          background-color: #f08127; /* Aktif durum rengi */
+          background-color:#f08127; /* Aktif durum rengi */
         }
 
         .swiper-pagination-bullet:hover {

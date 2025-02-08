@@ -45,7 +45,7 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
   };
 
   return (
-    <div className="relative w-full max-w-3xl mx-auto mt-12 bg-gray-100">
+    <div className="relative w-full max-w-3xl mx-auto mt-16 bg-gray-100"> {/* mt-16 burada ekli */}
       {/* Blob Arkaplan */}
       <motion.img
         initial={{ x: -50, opacity: 0 }}
@@ -64,7 +64,7 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.3 }}
-          className="relative w-full h-[400px] sm:h-[250px] md:h-[350px] lg:h-[350px] xl:h-[350px] overflow-hidden rounded-lg z-10" // her ekrana göre slider ayarı
+          className="relative w-full h-[400px] sm:h-[250px] md:h-[350px] lg:h-[350px] xl:h-[350px] overflow-hidden rounded-lg z-10"
         >
           <img
             src={images[currentIndex]}

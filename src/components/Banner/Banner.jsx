@@ -28,7 +28,7 @@ const Banner = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 2 }}
               className="text-3xl md:text-4xl font-bold !leading-snug"
             >
               Join Our Software Club: Empowering Future Innovators
@@ -37,7 +37,7 @@ const Banner = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 2, delay: 0.2 }}
                 className="flex items-center gap-4 p-6 bg-[#f4f4f4] rounded-2xl hover:bg-white duration-300 hover:shadow-2xl"
               >
                 <FaUsers className="text-2xl" />
@@ -46,7 +46,7 @@ const Banner = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
+                transition={{ duration: 2, delay: 0.4 }}
                 className="flex items-center gap-4 p-6 bg-[#f4f4f4] rounded-2xl hover:bg-white duration-300 hover:shadow-2xl"
               >
                 <MdEvent className="text-2xl" />
@@ -55,7 +55,7 @@ const Banner = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
+                transition={{ duration: 2, delay: 0.6 }}
                 className="flex items-center gap-4 p-6 bg-[#f4f4f4] rounded-2xl hover:bg-white duration-300 hover:shadow-2xl"
               >
                 <IoIosPaper className="text-2xl" />

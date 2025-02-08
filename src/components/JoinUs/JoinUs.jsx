@@ -11,7 +11,7 @@ const JoinUs = () => {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }} // Smoother transition
+          transition={{ duration: 2, ease: "easeOut" }} // Smoother transition
           className="flex flex-col justify-center text-center md:text-left"
         >
           <div className="space-y-4 lg:max-w-[400px] mx-auto md:mx-0">
@@ -24,8 +24,8 @@ const JoinUs = () => {
             </p>
             <a
               href="https://club.ieu.edu.tr/ogrenci-kulupleri"
-              className="primary-btn !mt-6 flex items-center gap-4 md:gap-8 px-16 py-4 md:px-32 md:py-6 bg-[#f08127] text-white font-semibold text-xl md:text-2xl rounded-2xl shadow-md hover:bg-secondary transition-all"
-            >
+              className="primary-btn !mt-6 flex items-center gap-4 md:gap-6 px-32 py-16 text-4xl sm:text-5xl lg:text-xl bg-[#f08127] text-white font-semibold rounded-2xl shadow-md hover:bg-secondary transition-all"
+              >
               <div className="flex items-center gap-2">
                 <FaUsers size={18} /> 
                 <span>Join Us</span>
@@ -38,7 +38,7 @@ const JoinUs = () => {
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }} 
+          transition={{ duration: 2, ease: "easeOut" }} 
           className="flex justify-center items-center"
         >
           <img

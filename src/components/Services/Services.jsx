@@ -53,7 +53,6 @@ const ServicesData = [
   },
 ];
 
-
 const SlideLeft = (delay) => ({
   initial: {
     opacity: 0,
@@ -63,9 +62,9 @@ const SlideLeft = (delay) => ({
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.3,
+      duration: 2, // Animasyon süresini 2 saniye yapıyoruz
       delay: delay,
-      ease: "easeInOut",
+      ease: "easeInOut", // Yavaş ve pürüzsüz geçiş
     },
   },
 });
@@ -78,7 +77,7 @@ const Services = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8">
           {ServicesData.map((service) => (
             <motion.div
-              key={service.id}  
+              key={service.id}
               variants={SlideLeft(service.delay)}
               initial="initial"
               whileInView="animate"
