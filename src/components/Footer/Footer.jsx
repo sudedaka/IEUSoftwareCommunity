@@ -12,7 +12,7 @@ const Footer = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-4">
           {/* First Section */}
-          <div className="space-y-4 max-w-[350px]">
+          <div className="space-y-4 max-w-[400px]">
             <h1 className="text-2xl font-bold">About Our Club</h1>
             <p className="text-dark2">
               Our club is dedicated to fostering a community of aspiring developers. We organize seminars, workshops, and collaborative projects to help you enhance your skills and enter the tech industry.
