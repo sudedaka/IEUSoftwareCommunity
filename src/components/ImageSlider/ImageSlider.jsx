@@ -10,10 +10,11 @@ import slider6 from "../../assets/activities/slider6.png";
 
 import Blob from "../../assets/blob.svg";
 
-const images = [slider1, slider2, slider3, slider4, slider5,slider6];
+const images = [slider1, slider2, slider3, slider4, slider5, slider6];
 
 const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlayActive, setIsAutoPlayActive] = useState(autoPlay);
   const slideIntervalRef = useRef(null);
 
   const nextSlide = () => {
@@ -27,11 +28,21 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
   };
 
   useEffect(() => {
-    if (!autoPlay) return;
+    if (!isAutoPlayActive) return;
     slideIntervalRef.current = setInterval(nextSlide, interval);
 
     return () => clearInterval(slideIntervalRef.current);
-  }, [autoPlay, interval]);
+  }, [isAutoPlayActive, interval]);
+
+  const handlePrevClick = () => {
+    setIsAutoPlayActive(false); // Otomatik geçişi durdur
+    prevSlide();
+  };
+
+  const handleNextClick = () => {
+    setIsAutoPlayActive(false); // Otomatik geçişi durdur
+    nextSlide();
+  };
 
   return (
     <div className="relative w-full max-w-4xl mx-auto mt-24 bg-gray-100">
@@ -46,13 +57,13 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
       />
 
       {/* Slider İçerik */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="popLayout">
         <motion.div
           key={currentIndex}
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
           className="relative w-full h-[400px] sm:h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg z-10"
         >
           <img
@@ -66,7 +77,7 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
       {/* Sol Ok */}
       <button
         className="absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full z-20 hover:bg-black/70 transition-all duration-300"
-        onClick={prevSlide}
+        onClick={handlePrevClick}
         aria-label="Önceki Slide"
         role="button"
       >
@@ -76,7 +87,7 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
       {/* Sağ Ok */}
       <button
         className="absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full z-20 hover:bg-black/70 transition-all duration-300"
-        onClick={nextSlide}
+        onClick={handleNextClick}
         aria-label="Sonraki Slide"
         role="button"
       >
@@ -91,7 +102,10 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               currentIndex === index ? "bg-white scale-125" : "bg-gray-400"
             }`}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() => {
+              setIsAutoPlayActive(false); // Otomatik geçişi durdur
+              setCurrentIndex(index);
+            }}
             aria-label={`Slide ${index + 1}`}
             role="button"
             whileHover={{ scale: 1.3 }}

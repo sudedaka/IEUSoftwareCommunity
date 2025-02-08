@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
-import { IoMdClose } from "react-icons/io"; // Çarpı ikonu için import
+import { IoMdClose } from "react-icons/io";
 import { motion } from "framer-motion";
 
 const NavbarMenu = [
@@ -39,7 +39,6 @@ const Navbar = () => {
 
   // Menü dışında tıklama kontrolü
   const handleOutsideClick = (e) => {
-    // Eğer menü dışına tıklanırsa menüyü kapat
     if (e.target.closest(".mobile-menu")) return;
     setIsMobileMenuOpen(false);
   };
@@ -51,8 +50,9 @@ const Navbar = () => {
         animate={{ opacity: 1, y: 0 }}
         className="container py-4 flex justify-between items-center"
       >
-        {/* Logo */}
-        <div>
+        {/* Logo with text */}
+        <div className="flex items-center gap-2">
+          <img src="../assets/logo.png" alt="Logo" className="w-10 h-10" /> {/* Adjust path and size */}
           <h1 className="font-bold text-2xl">IEU Software Community</h1>
         </div>
 
@@ -94,7 +94,7 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
           className="lg:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-40 flex flex-col items-center justify-center mobile-menu"
-          onClick={handleOutsideClick} // Menüyü kapatmak için tıklama kontrolü
+          onClick={handleOutsideClick}
         >
           <div className="absolute top-4 right-4">
             <IoMdClose
