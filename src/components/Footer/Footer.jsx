@@ -24,9 +24,9 @@ const Footer = () => {
             <div className="space-y-4">
               <h1 className="text-2xl font-bold">Our Activities</h1>
               <ul className="space-y-2 text-lg text-dark2">
-                <li className="cursor-pointer hover:text-secondary duration-200">Seminars</li>
-                <li className="cursor-pointer hover:text-secondary duration-200">Workshops</li>
-                <li className="cursor-pointer hover:text-secondary duration-200">Networking Events</li>
+                <li className=" hover:text-secondary duration-200">Seminars</li>
+                <li className=" hover:text-secondary duration-200">Workshops</li>
+                <li className=" hover:text-secondary duration-200">Networking Events</li>
               </ul>
             </div>
             <div className="space-y-4">
@@ -35,8 +35,8 @@ const Footer = () => {
                 <li className="cursor-pointer hover:text-secondary duration-200">
                   <a href="#home">Home</a>
                 </li>
-                <li className="cursor-pointer hover:text-secondary duration-200">
-                  <a href="#events">Events</a>
+                <li className=" hover:text-secondary duration-200">
+                 Events
                 </li>
                 <li className="cursor-pointer hover:text-secondary duration-200">
                   <a href="https://club.ieu.edu.tr/ogrenci-kulupleri" target="_blank" rel="noopener noreferrer">
@@ -57,13 +57,13 @@ const Footer = () => {
             <h1 className="text-2xl font-bold">Get In Touch</h1>
             <div className="flex space-x-6 py-3">
               <a href="">
-                <FaWhatsapp className="cursor-pointer hover:text-primary hover:scale-105 duration-200" size={18} />
+              <FaWhatsapp className="cursor-pointer hover:text-[#f08127] hover:scale-105 duration-200" size={18} />
               </a>
               <a href="https://www.instagram.com/ieusoftware?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-                <FaInstagram className="cursor-pointer hover:text-primary hover:scale-105 duration-200" size={18} />
+                <FaInstagram className="cursor-pointer hover:text-[#f08127] hover:scale-105 duration-200" size={18} />
               </a>
               <a href="https://www.linkedin.com/in/ieusoftwarecommunity/">
-                <FaLinkedin className="cursor-pointer hover:text-primary hover:scale-105 duration-200" size={18} />
+                <FaLinkedin className="cursor-pointer hover:text-[#f08127] hover:scale-105 duration-200" size={18} />
               </a>
             </div>
           </div>

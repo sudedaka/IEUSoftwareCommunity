@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-import { motion } from "framer-motion"; // Framer Motion import
+import { motion } from "framer-motion";
 
 import member1 from "../../assets/members/idil.png";
 import member2 from "../../assets/members/sezin.jpeg";
@@ -46,8 +46,16 @@ const OurTeam = () => {
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
+          pagination={{
+            clickable: true,
+            renderBullet: (index, className) => (
+              `<span class="${className} swiper-pagination-bullet"></span>`
+            ),
+          }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           className="w-full max-w-4xl mx-auto"
         >
@@ -63,7 +71,7 @@ const OurTeam = () => {
                   src={member.image}
                   alt={member.name}
                   className="w-40 h-40 rounded-full object-cover mb-4"
-                  whileHover={{ scale: 1.1 }} // Hover efekt
+                  whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 />
                 <motion.h3
@@ -85,8 +93,28 @@ const OurTeam = () => {
               </motion.div>
             </SwiperSlide>
           ))}
+
+          {/* Swiper Ok Düğmeleri */}
+          <div className="swiper-button-next absolute top-1/2 right-4 transform -translate-y-1/2 text-[#f08127] hover:text-[#00bcd4] cursor-pointer"></div>
+          <div className="swiper-button-prev absolute top-1/2 left-4 transform -translate-y-1/2 text-[#f08127] hover:text-[#00bcd4] cursor-pointer"></div>
         </Swiper>
       </div>
+
+      {/* Pagination (sayfa gezintisi) stilini değiştirme */}
+      <style jsx>{`
+        .swiper-pagination-bullet {
+          background-color: #bbb; /* İnaktif durum rengi */
+          transition: background-color 0.3s;
+        }
+
+        .swiper-pagination-bullet-active {
+          background-color: #f08127; /* Aktif durum rengi */
+        }
+
+        .swiper-pagination-bullet:hover {
+          background-color: #00bcd4; /* Hover durumu */
+        }
+      `}</style>
     </section>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import BannerPng from "../../assets/education.png"; // Banner görselini kulübünüze uygun olarak değiştirin
+import BannerPng from "../../assets/banner2.svg"; // Banner görselini kulübünüze uygun olarak değiştirin
 import { FaUsers } from "react-icons/fa"; // Katılımcılar ikonu
 import { MdEvent } from "react-icons/md"; // Etkinlik ikonu
 import { IoIosPaper } from "react-icons/io"; // Sertifikalar ikonu

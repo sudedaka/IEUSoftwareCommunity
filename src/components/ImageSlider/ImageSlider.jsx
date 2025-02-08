@@ -35,17 +35,17 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
   }, [isAutoPlayActive, interval]);
 
   const handlePrevClick = () => {
-    setIsAutoPlayActive(false); // Otomatik geçişi durdur
+    setIsAutoPlayActive(false); 
     prevSlide();
   };
 
   const handleNextClick = () => {
-    setIsAutoPlayActive(false); // Otomatik geçişi durdur
+    setIsAutoPlayActive(false); 
     nextSlide();
   };
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto mt-24 bg-gray-100">
+    <div className="relative w-full max-w-3xl mx-auto mt-12 bg-gray-100">
       {/* Blob Arkaplan */}
       <motion.img
         initial={{ x: -50, opacity: 0 }}
@@ -53,7 +53,7 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
         transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
         src={Blob}
         alt=""
-        className="absolute -bottom-32 left-1/2 transform -translate-x-1/2 w-full max-w-[1500px] md:max-w-[2500px] z-[1]"
+        className="absolute -bottom-32 left-1/2 transform -translate-x-1/2 w-full max-w-[1200px] md:max-w-[2000px] z-[1]"
       />
 
       {/* Slider İçerik */}
@@ -64,7 +64,7 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.3 }}
-          className="relative w-full h-[400px] sm:h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg z-10"
+          className="relative w-full h-[400px] sm:h-[250px] md:h-[350px] lg:h-[350px] xl:h-[350px] overflow-hidden rounded-lg z-10" // her ekrana göre slider ayarı
         >
           <img
             src={images[currentIndex]}
@@ -100,18 +100,36 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
           <motion.button
             key={index}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              currentIndex === index ? "bg-white scale-125" : "bg-gray-400"
+              currentIndex === index
+                ? "bg-[#f08127] scale-125" // Aktif durumu
+                : "bg-[#bbb]" // İnaktif durumu
             }`}
             onClick={() => {
-              setIsAutoPlayActive(false); // Otomatik geçişi durdur
+              setIsAutoPlayActive(false); 
               setCurrentIndex(index);
             }}
             aria-label={`Slide ${index + 1}`}
             role="button"
-            whileHover={{ scale: 1.3 }}
+            whileHover={{ scale: 1.3, backgroundColor: "#00bcd4" }} 
           />
         ))}
       </div>
+
+      {/* Custom CSS */}
+      <style jsx>{`
+        .swiper-pagination-bullet {
+          background-color: #bbb; 
+          transition: background-color 0.3s;
+        }
+
+        .swiper-pagination-bullet-active {
+          background-color: #ff5733;
+        }
+
+        .swiper-pagination-bullet:hover {
+          background-color: #00bcd4; 
+        }
+      `}</style>
     </div>
   );
 };

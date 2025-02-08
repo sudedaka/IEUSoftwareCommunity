@@ -1,29 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoMdMenu } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
 import { motion } from "framer-motion";
 
 const NavbarMenu = [
-  {
-    id: 1,
-    title: "Home",
-    path: "/",
-  },
-  {
-    id: 2,
-    title: "Our Team",
-    link: "#our-team",
-  },
-  {
-    id: 3,
-    title: "About Us",
-    link: "#about-us",
-  },
-  {
-    id: 4,
-    title: "Contact Us",
-    link: "#contact-us",
-  },
+  { id: 1, title: "Home", path: "/" },
+  { id: 2, title: "Our Team", link: "#our-team" },
+  { id: 3, title: "About Us", link: "#about-us" },
+  { id: 4, title: "Contact Us", link: "#contact-us" },
 ];
 
 const Navbar = () => {
@@ -43,6 +27,15 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
+  // Menü açıldığında body scroll'ını engelle
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMobileMenuOpen]);
+
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <motion.div
@@ -52,8 +45,8 @@ const Navbar = () => {
       >
         {/* Logo with text */}
         <div className="flex items-center gap-2">
-          <img src="../assets/logo.png" alt="Logo" className="w-10 h-10" /> {/* Adjust path and size */}
-          <h1 className="font-bold text-2xl">IEU Software Community</h1>
+          <img src="../assets/logo.png" alt="Logo" className="w-20 h-20" />
+          <h1 className="font-bold text-4xl">IEU Software Community</h1>
         </div>
 
         {/* Desktop Menu */}
@@ -63,14 +56,14 @@ const Navbar = () => {
               <li key={menu.id}>
                 <a
                   href={menu.link || menu.path}
-                  className="inline-block py-2 px-4 text-lg font-semibold hover:bg-secondary text-black rounded-lg transition duration-300"
+                  className="inline-block py-2 px-4 text-xl font-semibold hover:bg-secondary text-black rounded-lg transition duration-300"
                 >
                   {menu.title}
                 </a>
               </li>
             ))}
             <button
-              className="primary-btn px-6 py-3 bg-blue-600 text-white rounded-lg text-lg font-semibold"
+              className="primary-btn px-6 py-3 text-white rounded-lg text-lg font-semibold"
               onClick={handleSignInClick}
             >
               Sign In
@@ -80,10 +73,12 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden">
-          <IoMdMenu
-            onClick={toggleMobileMenu}
-            className="text-4xl cursor-pointer"
-          />
+          {!isMobileMenuOpen && (
+            <IoMdMenu
+              onClick={toggleMobileMenu}
+              className="text-6xl cursor-pointer"
+            />
+          )}
         </div>
       </motion.div>
 
@@ -99,10 +94,10 @@ const Navbar = () => {
           <div className="absolute top-4 right-4">
             <IoMdClose
               onClick={toggleMobileMenu}
-              className="text-4xl text-white cursor-pointer"
+              className="text-6xl text-black cursor-pointer"
             />
           </div>
-          <ul className="space-y-8 text-2xl">
+          <ul className="space-y-8 text-3xl">
             {NavbarMenu.map((menu) => (
               <motion.li
                 key={menu.id}
@@ -121,13 +116,13 @@ const Navbar = () => {
               </motion.li>
             ))}
             <motion.button
-              className="primary-btn text-5xl md:text-3xl px-8 py-3 bg-blue-600 text-white rounded-lg mt-4"
+              className="primary-btn text-5xl md:text-3xl px-8 py-3 text-white rounded-lg mt-4"
               onClick={handleSignInClick}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
-              Sign In
+              Join us
             </motion.button>
           </ul>
         </motion.div>
