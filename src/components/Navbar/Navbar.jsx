@@ -21,13 +21,13 @@ const Navbar = () => {
     window.open("https://club.ieu.edu.tr/ogrenci-kulupleri", "_blank");
   };
 
-  // Menü dışında tıklama kontrolü
+  // Click control outside the menu
   const handleOutsideClick = (e) => {
     if (e.target.closest(".mobile-menu")) return;
     setIsMobileMenuOpen(false);
   };
 
-  // Menü açıldığında body scroll'ını engelle
+  // Prevent body scrolling with menu dropdown
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";

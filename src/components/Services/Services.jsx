@@ -2,7 +2,6 @@ import React from "react";
 import { RiComputerLine } from "react-icons/ri";
 import { CiMobile3 } from "react-icons/ci";
 import { TbWorldWww } from "react-icons/tb";
-import { IoMdHappy } from "react-icons/io";
 import { BiSupport } from "react-icons/bi";
 import { IoPulseOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
@@ -62,9 +61,9 @@ const SlideLeft = (delay) => ({
     opacity: 1,
     x: 0,
     transition: {
-      duration: 2, // Animasyon süresini 2 saniye yapıyoruz
+      duration: 2, 
       delay: delay,
-      ease: "easeInOut", // Yavaş ve pürüzsüz geçiş
+      ease: "easeInOut", 
     },
   },
 });

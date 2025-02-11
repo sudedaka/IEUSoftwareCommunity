@@ -11,7 +11,7 @@ const JoinUs = () => {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 2, ease: "easeOut" }} // Smoother transition
+          transition={{ duration: 2, ease: "easeOut" }} 
           className="flex flex-col justify-center text-center md:text-left"
         >
           <div className="space-y-4 lg:max-w-[400px] mx-auto md:mx-0">

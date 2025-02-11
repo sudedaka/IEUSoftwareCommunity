@@ -8,7 +8,7 @@ const AboutUsData = [
     description:
       "Students whose aim is to learn software or improve their current knowledge in this field; to gain software awareness both theoretically and practically, together with dynamic work teams, to bring together our members with experts in their fields, to transfer their experience and work experiences, to be an intermediary for our members in finding internship and job opportunities, and to carry out all kinds of activities that support their personal development in the socio-cultural sense, and to provide motivation by raising their goals to the highest.",
     delay: 0.2,
-    direction: "left", // Soldan gelsin
+    direction: "left", 
   },
   {
     id: 2,
@@ -16,20 +16,20 @@ const AboutUsData = [
     description:
       "To create a bridge between business life and IEU Software Community, while supporting both our community and our members to take part in all kinds of activities in the software world that is advancing day by day, and to be a community that supports our members with training and contributes to their academic development by following the developing technology together with these technologies and developments.",
     delay: 0.3,
-    direction: "right", // Sağdan gelsin
+    direction: "right",
   },
 ];
 
 const SlideUp = (delay, direction) => ({
   initial: {
     opacity: 0,
-    x: direction === "left" ? -100 : 100, // Soldan -100, sağdan 100
+    x: direction === "left" ? -100 : 100, 
   },
   animate: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 2,  // 2 saniye süresince animasyon
+      duration: 2, 
       delay: delay,
       ease: "easeInOut",
     },

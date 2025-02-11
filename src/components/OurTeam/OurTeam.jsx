@@ -94,13 +94,13 @@ const OurTeam = () => {
             </SwiperSlide>
           ))}
 
-          {/* Swiper Ok Düğmeleri */}
+          {/* Swiper Ok Buttons */}
           <div className="swiper-button-next absolute top-1/2 right-4 transform -translate-y-1/2 text-[#f08127] hover:text-[#00bcd4] cursor-pointer"></div>
           <div className="swiper-button-prev absolute top-1/2 left-4 transform -translate-y-1/2 text-[#f08127] hover:text-[#00bcd4] cursor-pointer"></div>
         </Swiper>
       </div>
 
-      {/* Pagination (sayfa gezintisi) stilini değiştirme */}
+      {/* Change the pagination style */}
       <style jsx>{`
         .swiper-pagination-bullet {
           background-color: #bbb; /* İnaktif durum rengi */
