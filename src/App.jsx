@@ -6,6 +6,7 @@ import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import OurTeam from "./components/OurTeam/OurTeam.jsx";
 import Feedback from "./components/Feedback/Feedback.jsx";
 import ContactUs from "./components/ContactUs/ContactUs.jsx";
+import Events from "./components/Events/Events.jsx";
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -21,16 +22,15 @@ const App = () => {
     <Router>
       <Navbar onContactClick={scrollToFooter} />
       <Routes>
-        <Route 
-          path="/" 
-          element={
+        <Route path="/" element={
             <>
               <Home />
             </>
           } 
         />
-        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/events" element= {<Events/>}/>
         <Route path="/our-team" element={<OurTeam />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/contact-us" element={<ContactUs/>}/>
       </Routes>

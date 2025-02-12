@@ -5,10 +5,11 @@ import { motion } from "framer-motion";
 
 const NavbarMenu = [
   { id: 1, title: "Home", path: "/" },
-  { id: 2, title: "Our Team", link: "#our-team" },
-  { id: 3, title: "About Us", link: "#about-us" },
-  { id: 4, title: "Feedback", link: "#feedback"},
-  { id: 5, title: "Contact Us", link: "#contact-us" },
+  { id: 2, title: "Events", link: "#events" },
+  { id: 3, title: "Our Team", link: "#our-team" },
+  { id: 4, title: "About Us", link: "#about-us" },
+  { id: 5, title: "Feedback", link: "#feedback"},
+  { id: 6, title: "Contact Us", link: "#contact-us" },
 ];
 
 const Navbar = () => {
@@ -47,8 +48,8 @@ const Navbar = () => {
         {/* Logo with text */}
         <div className="flex items-center gap-2">
           <img src="../assets/logo.png" alt="Logo" className="w-20 h-20" />
-          <h1 className="font-bold text-4xl">IEU Software Community</h1>
-        </div>
+          <h1 className="font-bold text-4xl sm:text-3xl md:text-3xl py-2">IEU Software Community</h1>
+          </div>
 
         {/* Desktop Menu */}
         <div className="hidden lg:block">

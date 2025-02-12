@@ -7,12 +7,13 @@ import OurTeam from '../OurTeam/OurTeam';
 import JoinUs from '../JoinUs/JoinUs';
 import Feedback from '../Feedback/Feedback';
 import ContactUs from '../ContactUs/ContactUs';
-
+import Events from '../Events/Events';
 const Home = () => {
   return (
     <div id = "home">
       <ImageSlider autoPlay={true} interval={4000} />
       <JoinUs/>
+      <Events/>
       <OurTeam/>
       <Services />
       <AboutUs/>
