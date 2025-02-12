@@ -45,8 +45,8 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
   };
 
   return (
-    <div className="relative w-full max-w-3xl mx-auto mt-16 bg-gray-100"> {/* mt-16 burada ekli */}
-      {/* Blob Arkaplan */}
+    <div className="relative w-full max-w-3xl mx-auto mt-48 bg-gray-100"> 
+      {/* Blob Background*/}
       <motion.img
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -56,7 +56,7 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
         className="absolute -bottom-32 left-1/2 transform -translate-x-1/2 w-full max-w-[1200px] md:max-w-[2000px] z-[1]"
       />
 
-      {/* Slider İçerik */}
+      {/* Slider Content */}
       <AnimatePresence mode="popLayout">
         <motion.div
           key={currentIndex}
@@ -74,7 +74,7 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Sol Ok */}
+      {/* Left Dot*/}
       <button
         className="absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full z-20 hover:bg-black/70 transition-all duration-300"
         onClick={handlePrevClick}
@@ -84,7 +84,7 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
         <FaArrowLeft />
       </button>
 
-      {/* Sağ Ok */}
+      {/* Right Dot */}
       <button
         className="absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full z-20 hover:bg-black/70 transition-all duration-300"
         onClick={handleNextClick}
@@ -101,8 +101,8 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
             key={index}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               currentIndex === index
-                ? "bg-[#f08127] scale-125" // Aktif durumu
-                : "bg-[#bbb]" // İnaktif durumu
+                ? "bg-[#f08127] scale-125" // active
+                : "bg-[#bbb]" // inactive
             }`}
             onClick={() => {
               setIsAutoPlayActive(false); 

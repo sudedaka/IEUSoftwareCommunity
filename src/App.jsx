@@ -1,11 +1,12 @@
 import React, { useRef } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.jsx";
-import Footer from "./components/Footer/Footer.jsx";
 import Home from "./components/Home/Home.jsx";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import OurTeam from "./components/OurTeam/OurTeam.jsx";
+import Feedback from "./components/Feedback/Feedback.jsx";
 import ContactUs from "./components/ContactUs/ContactUs.jsx";
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -30,9 +31,9 @@ const App = () => {
         />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/our-team" element={<OurTeam />} />
-        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/feedback" element={<Feedback />} />
+        <Route path="/contact-us" element={<ContactUs/>}/>
       </Routes>
-      <Footer ref={footerRef} />
     </Router>
   );
 };

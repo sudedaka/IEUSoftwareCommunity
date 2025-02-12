@@ -7,7 +7,8 @@ const NavbarMenu = [
   { id: 1, title: "Home", path: "/" },
   { id: 2, title: "Our Team", link: "#our-team" },
   { id: 3, title: "About Us", link: "#about-us" },
-  { id: 4, title: "Contact Us", link: "#contact-us" },
+  { id: 4, title: "Feedback", link: "#feedback"},
+  { id: 5, title: "Contact Us", link: "#contact-us" },
 ];
 
 const Navbar = () => {
@@ -66,7 +67,7 @@ const Navbar = () => {
               className="primary-btn px-6 py-3 text-white rounded-lg text-lg font-semibold"
               onClick={handleSignInClick}
             >
-              Sign In
+              Join Us
             </button>
           </ul>
         </div>
