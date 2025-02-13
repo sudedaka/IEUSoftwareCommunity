@@ -8,13 +8,11 @@ import slider4 from "../../assets/activities/slider4.png";
 import slider5 from "../../assets/activities/slider5.png";
 import slider6 from "../../assets/activities/slider6.png";
 import slider7 from "../../assets/activities/slider7.png";
-
-
 import Blob from "../../assets/blob.svg";
 
 const images = [slider1,slider2,slider3,slider4,slider5,slider6,slider7];
 
-const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
+const ImageSlider = ({ autoPlay = true, interval = 1000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlayActive, setIsAutoPlayActive] = useState(autoPlay);
   const slideIntervalRef = useRef(null);
@@ -58,29 +56,20 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
         className="absolute -bottom-32 left-1/2 transform -translate-x-1/2 w-full max-w-[1200px] md:max-w-[2000px] z-[1]"
       />
 
-      {/* Slider Content */}
-      <AnimatePresence mode="popLayout">
-        <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.6 }}
-          className="relative w-full h-auto max-h-[400px] sm:max-h-[300px] md:max-h-[350px] lg:max-h-[350px] xl:max-h-[300px] overflow-hidden rounded-lg z-10"
-          >
-          <img
-            src={images[currentIndex]}
-            alt={`slide-${currentIndex}`}
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-      </AnimatePresence>
+         {/* Slider Content */}
+         <div className="relative w-full h-auto max-h-[400px] sm:max-h-[300px] md:max-h-[350px] lg:max-h-[350px] xl:max-h-[300px] overflow-hidden rounded-lg z-10">
+        <img
+          src={images[currentIndex]}
+          alt={`slide-${currentIndex}`}
+          className="w-full h-full object-cover"
+        />
+      </div>
 
       {/* Left Dot*/}
       <button
         className="absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full z-20 hover:bg-black/70 transition-all duration-300"
         onClick={handlePrevClick}
-        aria-label="Önceki Slide"
+        aria-label="Before Slide"
         role="button"
       >
         <FaArrowLeft />
@@ -90,7 +79,7 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
       <button
         className="absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full z-20 hover:bg-black/70 transition-all duration-300"
         onClick={handleNextClick}
-        aria-label="Sonraki Slide"
+        aria-label="Next Slide"
         role="button"
       >
         <FaArrowRight />

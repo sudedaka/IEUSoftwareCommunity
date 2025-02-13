@@ -27,7 +27,7 @@ const teamMembers = [
   { id: 6, name: "Sude Teslime Daka", position: "Career Development", image: member6 },
   { id: 7, name: "Efe Çalışkan", position: "Career Development", image: member7 },
   { id: 8, name: "Onat Erdem Muratlı", position: "Social Event", image: member8 },
-  { id: 9, name: "Ramazan Karakaş", position: "Social Event", image: member9 },
+  { id: 9, name: "Ramazan Yıldırım", position: "Social Event", image: member9 },
   { id: 10, name: "Efe Sönmez", position: "Social Event", image: member10 },
 ];
 
