@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Events = () => {
   const event = {
     title: "Machine Learning Workshop by Burak Evrentuğ",
-    date: "March 7, 2025",
+    date: "2025",
     description: "Join us for an exclusive workshop on Machine Learning, where Burak Evrentuğ will guide you through the latest advancements and practical applications.",
   };
 
