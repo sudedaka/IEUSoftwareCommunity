@@ -5,7 +5,7 @@ import { MdEvent } from "react-icons/md";
 import { IoIosPaper } from "react-icons/io"; 
 import { motion } from "framer-motion";
 
-const Banner = () => {
+const ClubInvitationBanner = () => {
   return (
     <section>
       <div className="container py-14 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-8 space-y-6 md:space-y-0">
@@ -69,4 +69,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default ClubInvitationBanner;

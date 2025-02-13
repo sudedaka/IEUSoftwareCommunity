@@ -1,16 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import slider1 from "../../assets/activities/slider1.jpg";
+import slider1 from "../../assets/activities/slider1.png";
 import slider2 from "../../assets/activities/slider2.png";
 import slider3 from "../../assets/activities/slider3.png";
-import slider4 from "../../assets/activities/slider4.jpg";
-import slider5 from "../../assets/activities/slider5.jpg";
+import slider4 from "../../assets/activities/slider4.png";
+import slider5 from "../../assets/activities/slider5.png";
 import slider6 from "../../assets/activities/slider6.png";
+import slider7 from "../../assets/activities/slider7.png";
+
 
 import Blob from "../../assets/blob.svg";
 
-const images = [slider1, slider2, slider3, slider4, slider5, slider6];
+const images = [slider1,slider2,slider3,slider4,slider5,slider6,slider7];
 
 const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,7 +47,7 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
   };
 
   return (
-    <div className="relative w-full max-w-3xl mx-auto mt-48 bg-gray-100"> 
+      <div className="relative w-full max-w-6xl mx-auto mt-40 bg-gray-100">
       {/* Blob Background*/}
       <motion.img
         initial={{ x: -50, opacity: 0 }}
@@ -63,9 +65,9 @@ const ImageSlider = ({ autoPlay = true, interval = 3000 }) => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.3 }}
-          className="relative w-full h-[400px] sm:h-[250px] md:h-[350px] lg:h-[350px] xl:h-[350px] overflow-hidden rounded-lg z-10"
-        >
+          transition={{ duration: 0.6 }}
+          className="relative w-full h-auto max-h-[400px] sm:max-h-[300px] md:max-h-[350px] lg:max-h-[350px] xl:max-h-[300px] overflow-hidden rounded-lg z-10"
+          >
           <img
             src={images[currentIndex]}
             alt={`slide-${currentIndex}`}

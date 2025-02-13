@@ -1,6 +1,6 @@
 import React from 'react';
 import Services from '../Services/Services';
-import Banner from '../Banner/Banner';
+import ClubInvitationBanner from '../ClubInvitationBanner/ClubInvitationBanner';
 import AboutUs from '../AboutUs/AboutUs';
 import ImageSlider from '../ImageSlider/ImageSlider';
 import OurTeam from '../OurTeam/OurTeam';
@@ -17,7 +17,7 @@ const Home = () => {
       <OurTeam/>
       <Services />
       <AboutUs/>
-      <Banner />
+      <ClubInvitationBanner />
       <Feedback/>
       <ContactUs/>
     </div>
