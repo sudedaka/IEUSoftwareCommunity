@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Home from "./components/Home/Home.jsx";
@@ -17,22 +17,28 @@ const App = () => {
   const scrollToFooter = () => {
     footerRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+  
+    //Remove hash fragment from URL
+    useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash) {
+        history.replaceState(null, "", window.location.pathname);
+      }
+    };
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   return (
     <Router>
       <Navbar onContactClick={scrollToFooter} />
       <Routes>
-        <Route path="/" element={
-            <>
-              <Home />
-            </>
-          } 
-        />
-        <Route path="/events" element= {<Events/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/events" element={<Events />} />
         <Route path="/our-team" element={<OurTeam />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/feedback" element={<Feedback />} />
-        <Route path="/contact-us" element={<ContactUs/>}/>
+        <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
     </Router>
   );
