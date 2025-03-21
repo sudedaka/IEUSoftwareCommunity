@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import slider0 from "../../assets/activities/slider0.png";
 import slider1 from "../../assets/activities/slider1.png";
 import slider2 from "../../assets/activities/slider2.png";
 import slider3 from "../../assets/activities/slider3.png";
@@ -10,7 +11,7 @@ import slider6 from "../../assets/activities/slider6.png";
 import slider7 from "../../assets/activities/slider7.png";
 import Blob from "../../assets/blob.svg";
 
-const images = [slider1,slider2,slider3,slider4,slider5,slider6,slider7];
+const images = [slider0,slider1,slider2,slider3,slider4,slider5,slider6,slider7];
 
 const ImageSlider = ({ autoPlay = true, interval = 1000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

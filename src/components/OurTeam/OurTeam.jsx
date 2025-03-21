@@ -17,6 +17,7 @@ import member7 from "../../assets/members/efecaliskan.jpeg";
 import member8 from "../../assets/members/onat.png";
 import member9 from "../../assets/members/ramazan.jpeg";
 import member10 from "../../assets/members/efe_sonmez.jpg";
+import member11 from "../../assets/members/onur.jpeg";
 
 const teamMembers = [
   { id: 1, name: "İdil Buse Zengin", position: "President", image: member1 },
@@ -29,6 +30,7 @@ const teamMembers = [
   { id: 8, name: "Onat Erdem Muratlı", position: "Social Event", image: member8 },
   { id: 9, name: "Ramazan Yıldırım", position: "Social Event", image: member9 },
   { id: 10, name: "Efe Sönmez", position: "Social Event", image: member10 },
+  { id: 11, name: "Onur Şahin", position: " -", image: member11 },
 ];
 
 const OurTeam = () => {
